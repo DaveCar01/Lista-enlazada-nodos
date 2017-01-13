@@ -1,6 +1,8 @@
 package strc;
 
-public class Slinkedlist 
+import javax.swing.JOptionPane;
+
+public class Slinkedlist
 {
 	protected Node head;
 	protected long size;
@@ -47,7 +49,7 @@ public class Slinkedlist
 		  head=null;
 	 }
 	 
-	 public int tama√±o()
+	 public int tamaÒo()
 	 {
 	     Node auxiliar;
 	     size=0;
@@ -67,12 +69,12 @@ public class Slinkedlist
 	     Node auxiliar= head;
 	     int contador=1;
 
-	     if(posicion<1 || posicion>=tama√±o()){
+	     if(posicion<1 || posicion>=tamaÒo()){
 	         System.out.println("posicion no encontrada");
 	     }else{
 	         while(auxiliar!=null){
 	             if (posicion == contador){
-	                 System.out.println("el elemento es : "+auxiliar.getElement()
+	                 JOptionPane.showMessageDialog(null, "el elemento es : "+auxiliar.getElement()
 	                 					+": en la posicion "+ posicion);
 	                 auxiliar=null;
 	                 }
@@ -84,13 +86,13 @@ public class Slinkedlist
 	         }
 	     }
 	 }
-	 public void eliminarpos(int posicion){
+	 public void eliminarposicion(int posicion){
 		 
 	     Node auxiliar= head;
 	     Node anterior=null;
 	     int contador=1;
 
-	     if(posicion<1 || posicion>=tama√±o()){
+	     if(posicion<0 || posicion>=tamaÒo()){
 	         System.out.println("posicion no encontrada");
 	     }else{
 	         while(auxiliar!=null){
@@ -111,18 +113,39 @@ public class Slinkedlist
 	 }
 	 
 	 public void imprimirLista(){
-	     System.out.println("LA LISTA ES :  ");
-	 
-	     
-	     Node auxiliar= head;
-	     
-	     while(auxiliar!=null){
-	         System.out.println(auxiliar.getElement());
-	         auxiliar=auxiliar.getNext();
-	     }
-	     
+	 JOptionPane.showMessageDialog(null, "LA LISTA ES :  "+"\n"+ ListaCab());
+	  
 	 }
 
 	
+	public String ListaCab()
+	{
+		String linea= " ";
+		Node auxiliar= head;
+	      
+	     int i=0;
+	     while(auxiliar!=null){
+	        linea+= "["+i+"]"+"->"+ auxiliar.getElement() + " \n";
+	         
+	         auxiliar=auxiliar.getNext();
+	         i++;
+	     }
+	     return linea;
+	}
+	public String ListaNueva()
+	{
+		String linea= " ";
+		Node auxiliar= head;
+	      
+	     int i=0;
+	     while(auxiliar!=null){
+	        linea+= "["+i+"]"+"->"+ auxiliar.getElement() + " \n";
+	         
+	         auxiliar=auxiliar.getNext();
+	         i++;
+	     }
+	     return linea;
+		
+	}
 	
 }

@@ -36,5 +36,4 @@ public class Node
 	{
 		next= newNext;
 	}
-	
 }
